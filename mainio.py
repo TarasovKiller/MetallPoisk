@@ -148,7 +148,7 @@ async def main():
                 logging.info("Process with category = {category}, proxy = {proxy} is launched".format(category=category,proxy=proxy))
                 await process_category(category, proxy)
 
-        for category in categories[:4]:
+        for category in categories:
             proxy = next(proxies)
             task = asyncio.create_task(worker(category,proxy))
             tasks.append(task)
